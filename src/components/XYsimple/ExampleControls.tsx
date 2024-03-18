@@ -294,7 +294,7 @@ export default function ExampleControls({ children }: ControlsProps) {
   // for series that support it, return a colorAccessor which returns a custom color if the datum is selected
   const colorAccessorFactory = useCallback(
     (dataKey: DataKey) => (d: CityTemperature) =>
-      annotationDataKey === dataKey && d === data[annotationDataIndex]
+      annotationDataKey === dataKey
         ? `url(#${selectedDatumPatternId})`
         : null,
     [annotationDataIndex, annotationDataKey],
@@ -784,22 +784,6 @@ export default function ExampleControls({ children }: ControlsProps) {
               checked={annotationDataKey == null}
             />
             none
-          </label>
-          <label>
-            <input
-              type="radio"
-              onChange={() => setAnnotationDataKey('San Francisco')}
-              checked={annotationDataKey === 'San Francisco'}
-            />
-            SF
-          </label>
-          <label>
-            <input
-              type="radio"
-              onChange={() => setAnnotationDataKey('New York')}
-              checked={annotationDataKey === 'New York'}
-            />
-            NY
           </label>
           <label>
             <input

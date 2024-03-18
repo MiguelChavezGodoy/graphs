@@ -174,11 +174,7 @@ export default function XYwithControls({ height }: XYChartProps) {
                       : [tooltipData?.nearestDatum?.key]
                     ).filter((city) => city) as City[]
                   ).map((city) => {
-                    const temperature =
-                      tooltipData?.nearestDatum?.datum &&
-                      accessors['y'][city](
-                        tooltipData?.nearestDatum?.datum,
-                      );
+                    const temperature = 0
 
                     return (
                       <div key={city}>
